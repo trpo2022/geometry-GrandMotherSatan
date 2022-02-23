@@ -65,4 +65,60 @@ Circle coordinates(char *figure)
   char coordinateY[_STRING_LENGTH];
   char radius[_STRING_LENGTH];
   int i = 0;
+  while (!(isdigit(figure[i])))
+  {
+    if (i == strlen(figure))
+      break;
+
+    i++;
+  }
+
+  int j = 0;
+
+  while (figure[i] != ' ')
+  {
+    if (i == strlen(figure))
+      break;
+
+    coordinateX[j] = figure[i];
+    j++;
+    i++;
+  }
+
+  j = 0;
+
+  while (figure[i] != ',')
+  {
+    if (i == strlen(figure))
+      break;
+
+    coordinateY[j] = figure[i];
+    j++;
+    i++;
+  }
+
+  j = 0;
+
+  while (!(isdigit(figure[i])))
+  {
+    if (i == strlen(figure))
+      break;
+
+    i++;
+  }
+
+  while (figure[i] != ')')
+  {
+    if (i == strlen(figure))
+      break;
+
+    radius[j] = figure[i];
+    j++;
+    i++;
+  }
+  if (coordinateX[i] == '.' && !(isdigit(coordinateX[i + 1])))
+    coordinates.flag_x = 0;
+    
+  if (coordinateY[i] == '.' && !(isdigit(coordinateY[i + 1])))
+    coordinates.flag_y = 0;
 
