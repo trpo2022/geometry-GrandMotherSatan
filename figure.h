@@ -28,4 +28,28 @@ int _if_is_circle(char *figure)
       (figure[5] == 'e' || figure[5] == 'E'))
   {
     return IS_CIRCLE;
+  }
+  else
+    return _FALSE;
+}
+
+int _if_staples(char *figure)
+{
+  int i = 0;
+
+  while (figure[i] != '(')
+  {
+    if (i == strlen(figure))
+      return _FALSE;
+    i++;
+  }
+  while (figure[i] != ')')
+  {
+    if (i == strlen(figure))
+      return _FALSE;
+    i++;
+  }
+
+  return _TRUE;
+}
 
