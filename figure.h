@@ -53,3 +53,16 @@ int _if_staples(char *figure)
   return _TRUE;
 }
 
+Circle coordinates(char *figure)
+{
+  Circle coordinates = {.x = _INVALID_VALUE,
+                        .y = _INVALID_VALUE,
+                        .radius = _INVALID_VALUE,
+                        .flag_x = 1,
+                        .flag_y = 1,
+                        .flag_radius = 1};
+  char coordinateX[_STRING_LENGTH];
+  char coordinateY[_STRING_LENGTH];
+  char radius[_STRING_LENGTH];
+  int i = 0;
+
