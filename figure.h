@@ -122,3 +122,44 @@ Circle coordinates(char *figure)
   if (coordinateY[i] == '.' && !(isdigit(coordinateY[i + 1])))
     coordinates.flag_y = 0;
 
+  for (i = 0; i < strlen(coordinateX); i++)
+  {
+    if (isdigit(coordinateX[i]) &&
+        (!(isdigit(coordinateX[i + 1])) && coordinateX[i + 1] != '.') &&
+        isdigit(coordinateX[i + 2]))
+      coordinates.flag_x = 0;
+  }
+
+  for (i = 0; i < strlen(coordinateY); i++)
+  {
+    if (isdigit(coordinateY[i]) &&
+        (!(isdigit(coordinateY[i + 1])) && coordinateY[i + 1] != '.') &&
+        isdigit(coordinateY[i + 2]))
+      coordinates.flag_y = 0;
+  }
+
+  for (i = 0; i < strlen(radius); i++)
+  {
+    if (isdigit(radius[i]) &&
+        (!(isdigit(radius[i + 1])) && radius[i + 1] != '.') &&
+        isdigit(radius[i + 2]))
+      coordinates.flag_radius = 0;
+  }
+
+  coordinates.x = atof(coordinateX);
+  coordinates.y = atof(coordinateY);
+  coordinates.radius = atof(radius);
+
+  return coordinates;
+}
+void _check_coordinates(Circle *coordinates)
+{
+  if (coordinates->x == _INVALID_VALUE)
+    coordinates->flag_x = 0;
+  if (coordinates->y == _INVALID_VALUE)
+    coordinates->flag_y = 0;
+  if (coordinates->radius == _INVALID_VALUE)
+    coordinates->flag_radius = 0;
+
+  return;
+}
