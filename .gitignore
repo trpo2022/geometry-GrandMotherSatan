@@ -3,3 +3,4 @@
 *.o
 *bin/geometry
 *bin/geometry-test
+*old_files
