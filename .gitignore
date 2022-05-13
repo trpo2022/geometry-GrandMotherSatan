@@ -1,2 +1,5 @@
-hello
-geometry
+*.d
+*.a
+*.o
+*bin/geometry
+*bin/geometry-test
