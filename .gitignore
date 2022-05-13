@@ -3,4 +3,6 @@
 *.o
 *bin/geometry
 *bin/geometry-test
-*old_files
+*old_files/Makefile
+*old_files/figure.h
+*old_files/geometry.c
